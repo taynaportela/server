@@ -1,0 +1,155 @@
+{
+    "UUID": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ],
+    "ParameterDIDs": [
+        {
+            "_S_DIDNumber": 300,
+            "Name": "ValidDIDName1",
+            "SessionRefs": "Extended",
+            "Signals": [
+                {
+                    "_S_Position": 0,
+                    "Name": "Signal1",
+                    "DataType": "UINT16",
+                    "IsArray": true,
+                    "ArraySize": 2,
+                    "ReadFunctionName": "ReadFunction1",
+                    "WriteFunctionName": "WriteFunction1"
+                },
+                {
+                    "_S_Position": 1,
+                    "Name": "Signal2",
+                    "DataType": "SINT16",
+                    "IsArray": false,
+                    "ReadFunctionName": "ReadFunction2",
+                    "WriteFunctionName": "WriteFunction2"
+                }
+            ]
+        },
+        {
+            "_S_DIDNumber": 301,
+            "Name": "ValidDIDName2",
+            "SessionRefs": "Safety",
+            "Signals": [
+                {
+                    "_S_Position": 0,
+                    "Name": "Signal3",
+                    "DataType": "UINT8",
+                    "IsArray": true,
+                    "ArraySize": 3,
+                    "ReadFunctionName": "ReadFunction3",
+                    "WriteFunctionName": "WriteFunction3"
+                },
+                {
+                    "_S_Position": 1,
+                    "Name": "Signal4",
+                    "DataType": "SINT8",
+                    "IsArray": false,
+                    "ReadFunctionName": "ReadFunction4",
+                    "WriteFunctionName": "WriteFunction4"
+                }
+            ]
+        }
+    ],
+    "ProcessDataDIDs": [
+        {
+            "_S_DIDNumber": 400,
+            "Name": "ValidProcessDataDID1",
+            "SessionRefs": "Extended",
+            "Signals": [
+                {
+                    "_S_Position": 0,
+                    "Name": "ProcessSignal1",
+                    "DataType": "UINT16",
+                    "ReadFunctionName": "ReadProcessFunction1"
+                },
+                {
+                    "_S_Position": 1,
+                    "Name": "ProcessSignal2",
+                    "DataType": "SINT16",
+                    "ReadFunctionName": "ReadProcessFunction2"
+                }
+            ]
+        },
+        {
+            "_S_DIDNumber": 401,
+            "Name": "ValidProcessDataDID2",
+            "SessionRefs": "EoL",
+            "Signals": [
+                {
+                    "_S_Position": 0,
+                    "Name": "ProcessSignal3",
+                    "DataType": "UINT32",
+                    "ReadFunctionName": "ReadProcessFunction3"
+                },
+                {
+                    "_S_Position": 1,
+                    "Name": "ProcessSignal4",
+                    "DataType": "SINT32",
+                    "ReadFunctionName": "ReadProcessFunction4"
+                }
+            ]
+        }
+    ],
+    "EnableBODASSeedKeyHandling": false,
+    "NonSecureAccessLevel": {
+        "SupportedUdsServices": [
+            "ECUReset",
+            "CommunicationControl"
+        ],
+        "Sessions": [
+            "Default",
+            "ExtendedDiagnostic"
+        ]
+    },
+    "GenericSecureAccessLevels": [
+        {
+            "_S_Name": "GenericSecureAccessLevel1",
+            "Sessions": [
+                "Programming",
+                "ExtendedDiagnostic"
+            ],
+            "KeySize_bytes": 16,
+            "SeedSize_bytes": 16
+        },
+        {
+            "_S_Name": "GenericSecureAccessLevel2",
+            "Sessions": [
+                "SafetySystemDiagnostic",
+                "EoL"
+            ],
+            "KeySize_bytes": 32,
+            "SeedSize_bytes": 32
+        }
+    ],
+    "Routines": [
+        {
+            "_S_Name": "Routine1",
+            "Identifier": 1024,
+            "Type": "START",
+            "Callback": "CallbackFunction1",
+            "InSignalLength_bytes": 256,
+            "OutSignalLength_bytes": 512
+        },
+        {
+            "_S_Name": "Routine2",
+            "Identifier": 2048,
+            "Type": "STOP",
+            "Callback": "CallbackFunction2",
+            "InSignalLength_bytes": 128,
+            "OutSignalLength_bytes": 256
+        }
+    ],
+    "BODASUDSCANBus": {
+        "Name": "UdsPhyExtd",
+        "NodeId": 1,
+        "TesterId": 250
+    },
+    "EthTesterLogicalAddress": 3712,
+    "EthECULogicalAddress": 256
+}
